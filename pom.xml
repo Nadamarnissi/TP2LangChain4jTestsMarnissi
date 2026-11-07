@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,22 +14,39 @@
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <langchain4j.version>1.22.0</langchain4j.version>
+        <langchain4j.beta.version>1.22.0-beta32</langchain4j.beta.version>
     </properties>
 
     <dependencies>
-        <!-- Framework LangChain4j -->
+
+        <!-- Tests 1, 2 et 3 : Framework LangChain4j -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
 
-        <!-- Connecteur pour Google Gemini -->
+        <!-- Tests 1, 2 et 3 : Connexion à Google Gemini -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-google-genai</artifactId>
-            <version>1.22.0-beta32</version>
+            <version>${langchain4j.beta.version}</version>
         </dependency>
+
+        <!-- Test 4 : Modèle d'embeddings local BGE Small -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings-bge-small-en-v15</artifactId>
+            <version>${langchain4j.beta.version}</version>
+        </dependency>
+
+        <!-- Correction : bibliothèque native Hugging Face pour Mac Intel -->
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>tokenizers</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
